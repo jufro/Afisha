@@ -9,13 +9,13 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 class FilmManagerTest {
     private FilmManager manager = new FilmManager();
-    private FilmItem first = new FilmItem (1, "Bloodshot", "action");
-    private FilmItem second = new FilmItem (2, "Onward", "cartoon");
-    private FilmItem third = new FilmItem (3, "Hotel Belgrad", "comedy");
-    private FilmItem forth = new FilmItem (4, "The Gentlemen", "action");
-    private FilmItem fifth = new FilmItem (5, "The Invisible Man", "thriller");
-    private FilmItem sixth = new FilmItem (6, "Trolls World Tour", "cartoon");
-    private FilmItem seventh = new FilmItem (7, "Grudge", "thriller");
+    private FilmItem first = new FilmItem(1, "Bloodshot", "action");
+    private FilmItem second = new FilmItem(2, "Onward", "cartoon");
+    private FilmItem third = new FilmItem(3, "Hotel Belgrad", "comedy");
+    private FilmItem forth = new FilmItem(4, "The Gentlemen", "action");
+    private FilmItem fifth = new FilmItem(5, "The Invisible Man", "thriller");
+    private FilmItem sixth = new FilmItem(6, "Trolls World Tour", "cartoon");
+    private FilmItem seventh = new FilmItem(7, "Grudge", "thriller");
 
     @BeforeEach
     public void setUp() {
@@ -54,6 +54,13 @@ class FilmManagerTest {
     void showFirstFilmsIfLessThanLength() {
         FilmItem[] actual = manager.showFirstFilms(5);
         FilmItem[] expected = new FilmItem[]{fifth, forth, third, second, first};
+        assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    void showFirstFilmsIfLessThanZero() {
+        FilmItem[] actual = manager.showFirstFilms(-1);
+        FilmItem[] expected = new FilmItem[]{seventh, sixth, fifth, forth, third, second, first};
         assertArrayEquals(expected, actual);
     }
 }

@@ -21,9 +21,6 @@ public class FilmManager {
     if (count <= 0){
       count = defaultCount;
     }
-    if (count > items.length) {
-      count = defaultCount;
-    }
     if (count > items.length && defaultCount > items.length) {
       count = items.length;
     }
