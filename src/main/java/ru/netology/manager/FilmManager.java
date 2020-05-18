@@ -1,12 +1,12 @@
 package ru.netology.manager;
 
 import ru.netology.domain.FilmItem;
-import ru.netology.repository.Repository;
+import ru.netology.repository.FilmRepository;
 
 public class FilmManager {
-  private Repository repository;
+  private FilmRepository repository;
 
-  public FilmManager(Repository repository) {
+  public FilmManager(FilmRepository repository) {
     this.repository = repository;
   }
 

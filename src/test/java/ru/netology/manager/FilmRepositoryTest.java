@@ -3,13 +3,13 @@ package ru.netology.manager;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import ru.netology.domain.FilmItem;
-import ru.netology.repository.Repository;
+import ru.netology.repository.FilmRepository;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class FilmRepositoryTest {
-    private Repository repository = new Repository();
+    private FilmRepository repository = new FilmRepository();
     private FilmItem first = new FilmItem (1, "Bloodshot", "action");
     private FilmItem second = new FilmItem (2, "Onward", "cartoon");
     private FilmItem third = new FilmItem (3, "Hotel Belgrad", "comedy");

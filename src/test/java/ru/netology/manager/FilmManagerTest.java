@@ -8,14 +8,14 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import ru.netology.domain.FilmItem;
-import ru.netology.repository.Repository;
+import ru.netology.repository.FilmRepository;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 
 public class FilmManagerTest {
     @Mock
-    private Repository repository;
+    private FilmRepository repository;
     @InjectMocks
     private FilmManager manager;
     private FilmItem first = new FilmItem (1, "Bloodshot", "action");

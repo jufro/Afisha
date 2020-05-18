@@ -2,7 +2,7 @@ package ru.netology.repository;
 
 import ru.netology.domain.FilmItem;
 
-public class Repository {
+public class FilmRepository {
     private FilmItem[] items = new FilmItem[0];
 
     public void save(FilmItem item) {
@@ -19,8 +19,7 @@ public class Repository {
     }
 
     public FilmItem findById(int filmId) {
-        for (FilmItem item:items
-             ) {
+        for (FilmItem item:items) {
             if (item.getId() == filmId) {
                 return item;
             }
