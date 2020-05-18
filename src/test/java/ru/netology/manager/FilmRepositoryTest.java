@@ -51,6 +51,7 @@ class FilmRepositoryTest {
         assertEquals(expected, actual);
     }
 
+
     @Test
     void shouldRemoveById() {
         repository.removeById(1);
@@ -60,7 +61,7 @@ class FilmRepositoryTest {
     }
 
     @Test
-    void removeByIdIfNotInRepo() {
+    void shouldRemoveByIdIfNotInRepo() {
         repository.removeById(10);
         FilmItem[] actual = repository.findAll();
         FilmItem[] expected = new FilmItem[]{first, second, third, forth, fifth, sixth, seventh};

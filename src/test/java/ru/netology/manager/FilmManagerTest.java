@@ -46,4 +46,14 @@ public class FilmManagerTest {
         FilmItem[] actual = manager.showFirstFilms(10);
         assertArrayEquals(expected, actual);
     }
+
+    @Test
+    void shouldShowFilmsIfLessThanZero() {
+        FilmItem[] returned = new FilmItem[]{first, second, third, forth, fifth, sixth, seventh};
+        doReturn(returned).when(repository).findAll();
+
+        FilmItem[] expected = new FilmItem[]{seventh, sixth, fifth, forth, third, second, first};
+        FilmItem[] actual = manager.showFirstFilms(-1);
+        assertArrayEquals(expected, actual);
+    }
 }
